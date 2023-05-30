@@ -1,0 +1,111 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Examples of Derivatives- Velocity and Acceleration}
+    Motion of particles can be represented by vectors. 
+    \begin{itemize}
+        \renewcommand\labelitemi{--}
+        \item \textit{position} of a particle with respect to a certain reference frame ($\bm{r}$)
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{r} = \bm{r}\paren{t} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item \textit{velocity} vector ($\bm{v}$)
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{v} \equiv \frac{d\bm{r}}{t} = \dot{\bm{r}} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item \textit{acceleration} vector ($\bm{a}$)
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{a} \equiv \frac{d\bm{v}}{t} = \frac{d^2\bm{r}}{dt^2} = \ddot{\bm{r}} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{itemize}
+    Consider a point particle in a rectangular coordinate system. \\
+    The vectors $\bm{r}$, $\bm{v}$, $\bm{a}$ describing a point particle can be expressed as
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{rcases}
+                \bm{r} = x_1\bm{e}_1 + x_2\bm{e}_2 + x_3\bm{e}_3 = \sum_ix_i\bm{e}_i\quad&\text{Position}\quad\\
+                \bm{v} = \dot{\bm{r}} = \sum_i\dot{x}_i\bm{e}_i = \sum_i\frac{dx_i}{dt}\bm{e}_i\quad&\text{Velocity}\quad\\
+                \bm{a} = \dot{\bm{v}} = \ddot{\bm{r}} = \sum_i\ddot{x}_i\bm{e}_i = \sum_i\frac{d^2x_i}{dt^2}\bm{e}_i\quad&\text{Acceleration}\quad\\
+            \end{rcases} &&
+        \end{flalign}
+    \end{eqnindent}
+    In non-rectangular coordinate systems, the unit vectors at the position of the point particle might not necessarily remain constant with time. \\
+    Consider a moving object tracing out the curve in \texttt{(Figure 1.14-1)} in a plane polar coordinate system
+    As the object moves along the curve $s\paren{t}$ from point $P^{\paren{1}}$ to point $P^{\paren{2}}$ in the time interval $t_2 - t_1 = dt$, the object experiences a change in $\bm{e}_r$ ($d\bm{e}_r$) and the change in $\bm{e}_{\theta}$ ($d\bm{e}_{\theta}$)
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{e}^{\paren{1}}_r - \bm{e}^{\paren{2}}_r &= d\bm{e}_r &&\\
+            \bm{e}^{\paren{1}}_{\theta} - \bm{e}^{\paren{2}}_{\theta} &= d\bm{e}_{\theta} &&
+        \end{flalign}
+    \end{eqnindent}
+    where $d\bm{e}_r$ is a vector normal to $\bm{e}_r$ (in the direction of $\bm{e}_{\theta}$) and  $d\bm{e}_{\theta}$ is a vector normal to $\bm{e}_{\theta}$ (in the direction opposite of $\bm{e}_{r}$). \\
+    Therefore, 
+    \begin{eqnindent}
+        \begin{flalign}
+            d\bm{e}_r = d\theta\bm{e}_{\theta}\quad&\Rightarrow\quad\dot{\bm{e}}_r = \dot{\theta}\bm{e}_{\theta} &&\\
+            d\bm{e}_{\theta} = - d\theta\bm{e}_r\quad&\Rightarrow\quad\dot{\bm{e}}_{\theta} = - \dot{\theta}\bm{e}_{r} &&
+        \end{flalign}
+    \end{eqnindent}
+    With expressions for $\dot{\bm{e}}_r$ and $\dot{\bm{e}}_{\theta}$, we can resolve $\bm{v}$ as
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{v} = \dot{\bm{r}} &= \frac{d}{dt}\paren{r\bm{e}_r} &&\nonumber\\
+            &= \dot{r}\bm{e}_r + r\dot{\bm{e}}_r &&\nonumber\\
+            &= \dot{r}\bm{e}_r + r\dot{\theta}\bm{e}_{\theta} &&
+        \end{flalign}
+    \end{eqnindent}
+    and $\bm{a}$ as
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{a} = \dot{\bm{v}} &= \frac{d}{dt}\paren{\dot{r}\bm{e}_r + r\dot{\theta}\bm{e}_{\theta}} &&\nonumber\\
+            &= \ddot{r}\bm{e}_r + \dot{r}\dot{\bm{e}}_r + \dot{r}\dot{\theta}\bm{e}_{\theta} + r\ddot{\theta}\bm{e}_{\theta} + r\dot{\theta}\dot{\bm{e}}_{\theta} &&\nonumber\\
+            &= \paren{\ddot{r} - r\dot{\theta}^2}\bm{e}_r + \paren{r\ddot{\theta} + 2\dot{r}\dot{\theta}}\bm{e}_{\theta} &&
+        \end{flalign}
+    \end{eqnindent}
+    into distinct \textit{radial} and \textit{angular} (\textit{traverse}) components. \\
+    In summary, we have the following expressions for $d\bm{s}$, $ds^2$, $v^2$, and $\bm{v}$ described in various 3-D coordinate systems: 
+    \begin{itemize}
+        \renewcommand\labelitemi{--}
+        \item Rectangular coordinates $\paren{x,~y,~z}$
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{rcases}
+                    d\bm{s} &= dx_1\bm{e}_1 + dx_2\bm{e}_2 + dx_3\bm{e}_3\quad\\
+                    ds^2 &= dx_1^2 + dx_2^2 + dx_3^2\quad\\
+                    v^2 &= \dot{x}_1^2 + \dot{x}_2^2 + \dot{x}_3^2\quad\\
+                    \bm{v} &= \dot{x}_1\bm{e}_1 + \dot{x}_2\bm{e}_2 + \dot{x}_3\bm{e}_3\quad
+                \end{rcases} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Spherical coordinates $\paren{r,~\theta,~\phi}$
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{rcases}
+                    d\bm{s} &= dr\bm{e}_r + rd\theta\bm{e}_{\theta} + r\sin\theta d\phi\bm{e}_{\phi}\quad\\
+                    ds^2 &= dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\phi^2\quad\\
+                    v^2 &= \dot{r}^2 + r^2\dot{\theta}^2 + r^2\sin^2\theta\dot{\phi}^2\quad\\
+                    \bm{v} &= \dot{r}\bm{e}_r + r\dot{\theta}\bm{e}_{\theta} + r\sin\theta\dot{\phi}\bm{e}_{\phi}\quad
+                \end{rcases} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Cylinrical coordinates $\paren{r,~\phi,~z}$
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{rcases}
+                    d\bm{s} &= dr\bm{e}_r + rd\phi\bm{e}_{\phi} + dz\bm{e}_z\quad\\
+                    ds^2 &= dr^2 + r^2d\phi^2 + dz^2\quad\\
+                    v^2 &= \dot{r}^2 + r^2\dot{\phi}^2 + \dot{z}^2\quad\\
+                    \bm{v} &= \dot{r}\bm{e}_r + r\dot{\phi}\bm{e}_\phi + \dot{z}\bm{e}_z\quad
+                \end{rcases} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{itemize}
+
+\end{document}

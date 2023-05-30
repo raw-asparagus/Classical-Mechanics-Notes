@@ -1,0 +1,53 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Differentiation of a Vector with Respect to a Scalar}
+    Looking at coordinate transformations\\
+    A derivative of a scalar function $\phi = \phi\paren{s}$ differentiated with respect to the scalar variable $s$ is a scalar. 
+    \begin{eqnindent}
+        \begin{flalign}
+            \phi = \phi'\quad&\Rightarrow\quad d\phi = d\phi' &&\\
+            \&\quad s = s'\quad&\Rightarrow\quad ds = ds' &&
+        \end{flalign}
+    \end{eqnindent}
+    Therefore, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \frac{d\phi}{ds} = \frac{d\phi'}{ds'} = \paren{\frac{d\phi}{ds}}' &&
+        \end{flalign}
+    \end{eqnindent}
+    Consider a vector $\bm{A}$. The components of $\bm{A}$ transform as
+    \begin{eqnindent}
+        \begin{flalign}
+            A_i' = \sum_j\lambda_{ij}A_j &&
+        \end{flalign}
+    \end{eqnindent}
+    On differentiation, we obtain, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \frac{dA_i'}{ds'} &= \frac{d}{ds'}\sum_j\lambda_{ij}A_j = \sum_j\lambda_{ij}\frac{dA_j}{ds'} &&\nonumber\\
+            \frac{dA_i'}{ds'} &= \paren{\frac{dA_i}{ds}}' = \sum_j\lambda_{ij}\paren{\frac{dA_j}{ds}} &&\nonumber\\
+            \Rightarrow \frac{dA_i'}{ds'} &= \sum_j\lambda_{ij}\frac{dA_j}{ds'} \equiv \sum_j\lambda_{ij}\paren{\frac{dA_j}{ds}} &&
+        \end{flalign}
+    \end{eqnindent}
+    which shows that the quantities $\frac{dA_j}{ds}$ transform as do the components of a vector and hence are the components of a vector, $\frac{d\bm{A}}{ds}$, the derivative of a vector $\bm{A}$ differentiated with respect to the scalar variable $s$. \\
+    Geometrically, for the vector $\frac{dA}{ds}$ to exist, $\bm{A}$ must be a continuous function of the variable $s$: $\bm{A} = \bm{A}\paren{s}$. \\
+    Suppose the function $\bm{A}\paren{s}$ to be represented by the continuous curve $\Gamma$ \texttt{(Figure 1.13-1)}\\
+    At point P, $x_1 = s$; at point Q, $x_2 = s + \Delta s$. \\
+    From the limit definition of a derivative, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \frac{d\bm{A}}{ds} = \lim_{\Delta s \rightarrow 0}\frac{\Delta \bm{A}}{\Delta s} = \lim_{\Delta s \rightarrow 0}\frac{\bm{A}\paren{s + \Delta s} - \bm{A}\paren{s}}{\Delta s} &&
+        \end{flalign}
+    \end{eqnindent}
+    Derivatives of vector sums and products obey the rules of ordinary vector calculus as follows
+    \begin{itemize}
+        \renewcommand\labelitemi{--}
+        \item $\frac{d}{ds}\paren{\bm{A} + \bm{B}} = \frac{d\bm{A}}{ds} + \frac{d\bm{B}}{ds}$
+        \item $\frac{d}{ds}\paren{\bm{A} \cdot \bm{B}} = \bm{A} \cdot \frac{d\bm{B}}{ds} + \frac{d\bm{A}}{ds} \cdot \bm{B}$
+        \item $\frac{d}{ds}\paren{\bm{A} \times \bm{B}} = \bm{A} \times \frac{d\bm{B}}{ds} + \frac{d\bm{A}}{ds} \times \bm{B}$
+        \item $\frac{d}{ds}\paren{\phi\bm{A}} = \phi\frac{d\bm{A}}{s} + \frac{d\phi}{ds}\bm{A}$
+    \end{itemize}
+
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+
+\usepackage[in]{fullpage}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\allowdisplaybreaks
+
+\usepackage{bm}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\sparen}{\lbrack}{\rbrack}
+\makeatletter
+    \let\oldabs\abs
+    \def \abs {\@ifstar{\oldabs}{\oldabs*}}
+    \let\oldparen\paren
+    \def \paren {\@ifstar{\oldparen}{\oldparen*}}
+\makeatother
+
+\usepackage{scrextend}
+\newenvironment{indented}
+    {
+        \begin{addmargin}[15pt]{0pt}
+    }
+    {
+        \end{addmargin}
+    }
+\newenvironment{eqnindent}
+{
+    \begin{addmargin}[15pt]{0pt}
+        \vspace{-\bigskipamount}
+        \vspace{-\smallskipamount}
+}
+{
+    \end{addmargin}
+    \vspace{-\smallskipamount}
+}
+
+\usepackage{subfiles}
+
+\begin{document}
+
+    \section{Matrices, Vectors, and Vector Calculus}
+    \addtocounter{subsection}{10}
+    \subfile{./chap_1/chap_1_11.tex}
+    \subfile{./chap_1/chap_1_12.tex}
+    \subfile{./chap_1/chap_1_13.tex}
+    \subfile{./chap_1/chap_1_14.tex}
+    \subfile{./chap_1/chap_1_15.tex}
+    \subfile{./chap_1/chap_1_16.tex}
+    \subfile{./chap_1/chap_1_17.tex}
+
+\end{document}

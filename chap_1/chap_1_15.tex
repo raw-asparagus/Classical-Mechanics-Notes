@@ -1,0 +1,101 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Angular Velocity}
+    Consider a point particle moving in a 3-D coordinate system. \\
+    The path the particle describes in an infinitesimal time $\delta t$ may be represented as an infinitesimal arc of a circle with the line passing through the center of the circle perpendicular to the instantaneous direction of motion being the instantaneous axis of rotation. \\
+    Angular velocity - rate of change of the angular position
+    \begin{eqnindent}
+        \begin{flalign}
+            \omega = \frac{d\theta}{dt} = \dot{\theta} &&
+        \end{flalign}
+    \end{eqnindent}
+    Consider a particle moving in \texttt{(Figure 1.15-1)} in a cylindrical coordinate system. \\
+    As the position vector of a point changes from $\bm{r}$ to $\bm{r} + \delta\bm{r}$, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \delta\bm{r} = \delta\bm{\theta} \times \bm{r} &&
+        \end{flalign}
+    \end{eqnindent}
+    where the quantity $\delta\bm{\theta}$ has magnitude equal to the infinitesimal rotation angle and directed along the instantaneous axis of rotation. \\
+    Finite rotations
+    \begin{itemize}
+        \renewcommand\labelitemi{--} 
+        \item cannot be represented by an axial vector
+        \item rotations do not commute\\
+        i.e. different results depending on the order of rotations\\
+        Suppose vectors $\bm{A}$ and $\bm{B}$ represent rotations described by the rotation matrices $\lambda_1$ and $\lambda_2$ respectively. \\
+        The rotation $\lambda_3 = \lambda_1\lambda_2$ yields the vector sum $\bm{C} = \bm{A} + \bm{B}$ whereas the rotation $\lambda_4 = \lambda_2\lambda_1$ yields $\bm{D} = \bm{B} + \bm{A}$. 
+        As such, in general, $\lambda_3 \not\equiv\ \lambda_4$ while $\bm{C} \equiv \bm{D}$, and thus, successive applications of finite rotations do not commute. 
+    \end{itemize}
+    Infinitesimal rotations
+    \begin{itemize}
+        \renewcommand\labelitemi{--} 
+        \item can be represented by an axial vector\\
+        Suppose a point moves by rotations $\delta\bm{\theta}_1$ and $\delta\bm{\theta}_2$ \texttt{(Figure 1.15-2)}. \\
+        As the rotation $\delta\bm{\theta}_1$ takes $\bm{r}$ into $\bm{r} + \delta\bm{r}_1$, 
+        \begin{eqnindent}
+            \begin{flalign}
+                \delta\bm{r}_1 = \delta\bm{\theta}_1 \times \bm{r} &&
+            \end{flalign}
+        \end{eqnindent}
+        A successive rotaton $\delta\bm{\theta}_2$ from $\bm{r} + \delta\bm{r}_1$ will result in
+        \begin{eqnindent}
+            \begin{flalign}
+                \delta\bm{r}_2 = \delta\bm{\theta}_2 \times \paren{\bm{r} + \delta\bm{r}_1} &&
+            \end{flalign}
+        \end{eqnindent}
+        and thus, 
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{r} + \delta\bm{r}_{12} &= \bm{r} + \sparen{\delta\bm{\theta}_1 \times \bm{r} + \delta\bm{\theta}_2 \times \paren{\bm{r} + \delta\bm{r}_1}} &&\nonumber\\
+                \delta\bm{r}_{12} &\approx \delta\bm{\theta}_1 \times \bm{r} + \delta\bm{\theta}_2 \times \bm{r} &&
+            \end{flalign}
+        \end{eqnindent}
+        Or instead if the rotation $\delta\bm{\theta}_2$ suceeds $\delta\bm{\theta}_1$, 
+        \begin{eqnindent}
+            \begin{flalign}
+                \delta\bm{r}_2 &= \delta\bm{\theta}_2 \times \bm{r} &&\\
+                \delta\bm{r}_1 &= \delta\bm{\theta}_1 \times \paren{\bm{r} + \delta\bm{r}_2} &&\\
+                \Rightarrow 
+                \bm{r} + \delta\bm{r}_{21} &= \bm{r} + \sparen{\delta\bm{\theta}_2 \times \bm{r} + \delta\bm{\theta}_1 \times \paren{\bm{r} + \delta\bm{r}_2}} &&\nonumber\\
+                \delta\bm{r}_{21} &\approx \delta\bm{\theta}_2 \times \bm{r} + \delta\bm{\theta}_1 \times \bm{r} &&
+            \end{flalign}
+        \end{eqnindent}
+        Comparing rotation vectors $\delta\bm{r}_{12}$ \& $\delta\bm{r}_{21}$ shows that $\delta\bm{\theta}_1$ \& $\delta\bm{\theta}_2$ do commute. 
+    \end{itemize}
+    Consider a particle moving in \texttt{(Figure 1.15-3)} in a cylindrical coordinate system with the origin lying at an arbitrary point $O$ on the axis of rotation. \\
+    The time rate of change of the position vector is the linear velocity vector of the particle
+    \begin{indented}
+        i.e. $\dot{\bm{r}} = \bm{v}$
+    \end{indented}
+    with an instantaneous magnitude - 
+    \begin{eqnindent}
+        \begin{flalign}
+            v = R\frac{d\theta}{dt} &= R\omega,\quad\text{where }R = r\sin\alpha &&\nonumber\\
+            &= r\omega\sin\alpha &&
+        \end{flalign}
+    \end{eqnindent}
+    and direction perpendicular to $\bm{r}$ on the plane of the circle. \\
+    The angular velocity vector $\bm{\omega}$ is defined along the normal of the plane with the positive direction corresponding to the direction of advance of a right-hand screw when turned in the same sense as the rotation of the particle. \\
+    Described as the ratio of an infinitesimal rotational angle to an infinitesimal time, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{\omega} = \frac{\delta\bm{\theta}}{\delta t} &&
+        \end{flalign}
+    \end{eqnindent}
+    The particle moves an infinitesimal $\delta \bm{r}$ in an infinitesimal $\delta t$, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \frac{\delta\bm{r}}{\delta t} = \frac{\delta\bm{\theta}}{\delta t} \times \bm{r} &&
+        \end{flalign}
+    \end{eqnindent}
+    As $\delta t \rightarrow 0$, 
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{v} = \bm{\omega} \times \bm{r} &&
+        \end{flalign}
+    \end{eqnindent}
+
+\end{document}
