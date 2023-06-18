@@ -1,0 +1,132 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Scalar Product of Two Vectors}
+    Scalar product (dot product)
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{A} \cdot \bm{B} = \sum_iA_iB_i &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{dasheditemize}
+        \item the scalar product can be expressed in terms of the distances from the origin to points $\paren{A_1,~A_2,~A_3}$ \& $\paren{B_1,~B_2,~B_3}$ and the angle between vectors $\bm{A}$ \& $\bm{B}$
+        \begin{indented}
+            i.e.
+            \begin{indented}
+                The direction cosines $\Lambda_i$ of position vectors $\bm{A}$ or $\bm{B}$ are given by
+                \begin{eqnindent}
+                    \begin{flalign}
+                        \Lambda_i^A = \frac{A_i}{\abs{\bm{A}}}\quad\&\quad\Lambda_i^B = \frac{B_i}{\abs{\bm{B}}} &&
+                    \end{flalign}
+                \end{eqnindent}
+                and from equation (\ref{eq:13}), the expression $\sum_i\Lambda_i^A\Lambda_i^B$ equates to the cosine of the angle between $\bm{A}$ \& $\bm{B}$
+                \begin{eqnindent}
+                    \begin{flalign}
+                        \begin{split}
+                            \cos\paren{\bm{A},~\bm{B}} &= \sum_i\Lambda_i^A\Lambda_i^B\\
+                            &= \sum_i\frac{A_i}{\abs{\bm{A}}}\frac{B_i}{\abs{\bm{B}}} = \frac{\bm{A} \cdot \bm{B}}{\abs{\bm{A}}\abs{\bm{B}}}\\
+                            \implies \bm{A} \cdot \bm{B} &= \abs{\bm{A}}\abs{\bm{B}}\cos\paren{\bm{A},~\bm{B}}
+                        \end{split} &&
+                    \end{flalign}
+                \end{eqnindent}
+            \end{indented}
+        \end{indented}
+    \end{dasheditemize}
+    \blankline
+    Consider position vectors $\bm{A}$ \& $\bm{B}$ on a 3-D coordinate system \texttt{(Figure 1.10-1)}\newline
+    Position vector -- vector extending from the origin to a point
+    \begin{indented}
+        e.g.
+        \begin{indented}
+            The vector $\bm{A}$ extending from the origin to the point $\paren{A_1,~A_2,~A_3}$ on a 3-D coordinate system
+        \end{indented}
+    \end{indented}
+    \begin{dasheditemize}
+        \item has magnitude
+        \begin{eqnindent}
+            \begin{flalign}
+                \abs{\bm{A}} = \sqrt{\bm{A} \cdot \bm{A}} = \sqrt{\sum_iA_iA_i} = \sqrt{\sum_iA_i^2} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{hookeditemize}
+            \item which gives the distance from the origin to the point
+        \end{hookeditemize}
+    \end{dasheditemize}
+    Difference vector -- vector connecting a point and any other point
+    \begin{indented}
+        e.g.
+        \begin{indented}
+            The vector connecting points $\paren{A_1,~A_2,~A_3}$ \& $\paren{B_1,~B_2,~B_3}$ is $\bm{A} - \bm{B}$
+        \end{indented}
+    \end{indented}
+    \begin{dasheditemize}
+        \item has magnitude
+        \begin{eqnindent}
+            \begin{flalign}
+                \sqrt{\sum_i\paren{A_i - B_i}^2} = \sqrt{\paren{\bm{A} - \bm{B}} \cdot \paren{\bm{A} - \bm{B}}} = \abs{\bm{A} - \bm{B}} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{hookeditemize}
+            \item which gives the distance between the two points
+        \end{hookeditemize}
+    \end{dasheditemize}
+    Looking at coordinate transformations of vectors $\bm{A}$ \& $\bm{B}$ on a 3-D coordinate system\newline
+    Position vectors $\bm{A}$ \& $\bm{B}$ transforms to $\bm{A}'$ \& $\bm{B}'$ as
+    \begin{eqnindent}
+        \begin{flalign}
+            A_i' &= \sum\lambda_{ij}A_j\quad\&\quad B_i' = \sum_k\lambda_{ik}B_k &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                \bm{A}' \cdot \bm{B}' = \sum_iA_i'B_i' &= \sum_i\paren{\sum_j\lambda_{ij}A_j}\paren{\sum_k\lambda_{ik}B_k}\\
+                &= \sum_{j,~k}\paren{\sum_i\lambda_{ij}\lambda_{ik}}A_jB_k,\quad\sum_i\lambda_{ij}\lambda_{ik} = \delta_{jk}\\
+                &= \sum_j\paren{\sum_k\delta_{jk}A_jB_k},\quad\delta_{jk}A_jB_k = \begin{cases}
+                    \quad0,\quad j \neq k\\
+                    \quad A_jB_j,\quad j = k
+                \end{cases}\\
+                &= \sum_jA_jB_j\\
+                &= \bm{A} \cdot \bm{B}\\
+                \implies \bm{A} \cdot \bm{B} &= \bm{A}' \cdot \bm{B}'
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{hookeditemize}
+        \item the value of the scalar product remains unaffected under a coordinate transformation
+        \item the distance between a point and any other point remains unchanged\newline
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                \abs{\bm{A} - \bm{B}} = \abs{\bm{A}' - \bm{B}'} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{hookeditemize}
+            \item orthogonal transformations are distance preserving transformations
+        \end{hookeditemize}
+    \end{hookeditemize}
+    \blankline
+    Scalar products obey the commutative and distributive laws
+    \begin{dasheditemize}
+        \item Commutative
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \bm{A} \cdot \bm{B} &= \sum_iA_iB_i\\
+                    &= \sum_iB_iA_i = \bm{B} \cdot \bm{A}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Distributive
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \bm{A} \cdot \paren{\bm{B} + \bm{C}} &= \sum_iA_i\paren{B + C}_i\\
+                    &= \sum_iA_i\paren{B_i + C_i} = \sum_i\paren{A_iB_i + A_iC_i} = \bm{A} \cdot \bm{B} + \bm{A} \cdot \bm{C}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{dasheditemize}
+
+\end{document}

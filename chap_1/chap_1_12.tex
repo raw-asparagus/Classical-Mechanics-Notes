@@ -3,70 +3,79 @@
 \begin{document}
 
     \subsection{Vector Products of Two Vectors}
+    Consider vectors $\bm{A}$ \& $\bm{B}$ on a 3-D coordinate system\newline
     Vector product (cross product)
     \begin{eqnindent}
         \begin{flalign}
             \bm{C} = \bm{A} \times \bm{B} &&
         \end{flalign}
     \end{eqnindent}
-    where $\bm{C}$ is a vector resulting from this operation with components - 
+    where $\bm{C}$ is a vector resulting from this operation with components
     \begin{eqnindent}
         \begin{flalign}
             C_i \equiv \sum_{j, k}\epsilon_{ijk}A_jB_k &&
         \end{flalign}
     \end{eqnindent}
     in which $\epsilon_{ijk}$ is the permutation symbol (Levi-Civita density)
-    \begin{eqnindent}
-        \begin{flalign}
-            \hookrightarrow \epsilon_{ijk} = 
-            \begin{rcases}
-                    0&,\quad\text{if any index is equal to any other index}\quad\\
-                    +1&,\quad\text{if $i$, $j$, $k$ form an \textit{even} permutation of 1, 2, 3}\quad\\
-                    -1&,\quad\text{if $i$, $j$, $k$ form an \textit{odd} permutation of 1, 2, 3}\quad
-            \end{rcases} &&
-        \end{flalign}
-    \end{eqnindent}
-    \begin{itemize}
-        \renewcommand\labelitemi{--}
-        \item An even permutation has an even number of exchanges of position of symbols
-        \begin{indented}
-            e.g. Cyclic permutations $123 \rightarrow 312 \rightarrow 231$
-        \end{indented}
-        \item An odd permutation has an odd number of exchanges of position of symbols
-        \begin{indented}
-            e.g. Cyclic permutations $132 \rightarrow 213 \rightarrow 321$
-        \end{indented}
-    \end{itemize}
-    The resultant vector $\bm{C}$ has magnitude - 
-    \begin{eqnindent}
-        \begin{flalign}
-            \abs{\bm{C}} &= \sqrt{C_1^2 + C_2^2 + C_3^2} = \sqrt{\sum_i\paren{\sum_{j, k}\epsilon_{ijk}A_jB_k}^2} &&\nonumber\\
-            &= \sqrt{\paren{A_2B_3 - A_3B_2}^2 + \paren{A_3B_1 - A_1B_3}^2 + \paren{A_1B_2 - A_2B_1}^2} &&\nonumber\\
-            &= \big[\paren{A_2^2B_3^2 - 2A_2B_3A_3B_2 + A_3^2B_2^2} + \paren{A_3^2B_1^2 - 2A_3B_1A_1B_3 + A_1^2B_3^2} &&\nonumber\\
-            &\qquad + \paren{A_1^2B_2^2 - 2A_1B_2A_2B_1 + A_2^2B_1^2}\big]^{\frac{1}{2}} &&\nonumber\\
-            &= \big[\paren{A_2^2B_3^2 + A_3^2B_2^2 + A_3^2B_1^2 + A_1^2B_3^2 + A_1^2B_2^2 + A_2^2B_1^2 + A_1^2B_1^2 + A_2^2B_2^2 + A_3^2B_3^2} &&\nonumber\\
-            &\qquad - \paren{2A_2B_3A_3B_2 + 2A_3B_1A_1B_3 + 2A_1B_2A_2B_1 + A_1^2B_1^2 + A_2^2B_2^2 + A_3^2B_3^2}\big]^{\frac{1}{2}} &&\nonumber\\
-            &= \sqrt{\paren{\sum_iA_i^2}\paren{\sum_iB_i^2} - \paren{A_1B_1 + A_2B_2 + A_3B_3}^2} &&\nonumber\\
-            &= \sqrt{\paren{\sum_iA_i^2}\paren{\sum_iB_i^2} - \paren{\sum_iA_iB_i}^2} &&\nonumber\\
-            &= \sqrt{\abs{\bm{A}}^2\abs{\bm{B}}^2 - \abs{\bm{A}}^2\abs{\bm{B}}^2\cos^2\paren{\bm{A},~\bm{B}}} = \sqrt{\abs{\bm{A}}^2\abs{\bm{B}}^2\sin^2\paren{\bm{A},~\bm{B}}} = \abs{\bm{A}}\abs{\bm{B}}\sin\paren{\bm{A},~\bm{B}} &&
-        \end{flalign}
-    \end{eqnindent}
-    Consider vectors $\bm{A}$ \& $\bm{B}$ on a 3-D coordinate system. \\
+    \begin{hookeditemize}
+        \item $\epsilon_{ijk} = 
+            \begin{cases}
+                    \quad0&,\quad\text{if any index is equal to any other index}\\
+                    \quad+ 1&,\quad\text{if $i$, $j$, $k$ form an \textit{even} permutation of 1, 2, 3}\\
+                    \quad- 1&,\quad\text{if $i$, $j$, $k$ form an \textit{odd} permutation of 1, 2, 3}
+            \end{cases}
+        $
+        \begin{dasheditemize}
+            \item An even permutation has an even number of exchanges of position of symbols
+            \begin{indented}
+                e.g.
+                \begin{indented}
+                    Cyclic permutations $123 \rightarrow 312 \rightarrow 231$
+                \end{indented}
+            \end{indented}
+            \item An odd permutation has an odd number of exchanges of position of symbols
+            \begin{indented}
+                e.g.
+                \begin{indented}
+                    Cyclic permutations $132 \rightarrow 213 \rightarrow 321$
+                \end{indented}
+            \end{indented}
+        \end{dasheditemize}
+    \end{hookeditemize}
+    \begin{dasheditemize}
+        \item has magnitude
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \abs{\bm{C}} &= \sqrt{C_1^2 + C_2^2 + C_3^2} = \sqrt{\sum_i\paren{\sum_{j, k}\epsilon_{ijk}A_jB_k}^2}\\
+                    &= \sqrt{\paren{A_2B_3 - A_3B_2}^2 + \paren{A_3B_1 - A_1B_3}^2 + \paren{A_1B_2 - A_2B_1}^2}\\
+                    &= \big[\paren{A_2^2B_3^2 - 2A_2B_3A_3B_2 + A_3^2B_2^2} + \paren{A_3^2B_1^2 - 2A_3B_1A_1B_3 + A_1^2B_3^2}\\
+                    &\qquad + \paren{A_1^2B_2^2 - 2A_1B_2A_2B_1 + A_2^2B_1^2}\big]^{\frac{1}{2}}\\
+                    &= \big[\paren{A_2^2B_3^2 + A_3^2B_2^2 + A_3^2B_1^2 + A_1^2B_3^2 + A_1^2B_2^2 + A_2^2B_1^2 + A_1^2B_1^2 + A_2^2B_2^2 + A_3^2B_3^2}\\
+                    &\qquad - \paren{2A_2B_3A_3B_2 + 2A_3B_1A_1B_3 + 2A_1B_2A_2B_1 + A_1^2B_1^2 + A_2^2B_2^2 + A_3^2B_3^2}\big]^{\frac{1}{2}}\\
+                    &= \sqrt{\paren{\sum_iA_i^2}\paren{\sum_iB_i^2} - \paren{A_1B_1 + A_2B_2 + A_3B_3}^2} = \sqrt{\abs{\bm{A}}^2\abs{\bm{B}}^2 - \paren{\sum_iA_iB_i}^2}\\
+                    &= \sqrt{\abs{\bm{A}}^2\abs{\bm{B}}^2 - \abs{\bm{A}}^2\abs{\bm{B}}^2\cos^2\paren{\bm{A},~\bm{B}}} = \sqrt{\abs{\bm{A}}^2\abs{\bm{B}}^2\sin^2\paren{\bm{A},~\bm{B}}}\\
+                    &= \abs{\bm{A}}\abs{\bm{B}}\sin\paren{\bm{A},~\bm{B}}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{dasheditemize}
     Geometrically, the expression $\abs{\bm{A}}\abs{\bm{B}}\sin\paren{\bm{A},~\bm{B}}$ is equivalent to the area of the parallelogram defined by vectors $\bm{A}$ and $\bm{B}$ \texttt{(Figure 1.12-1)}. 
-    \begin{itemize}
-        \renewcommand\labelitemi{--}
+    \begin{hookeditemize}
         \item The vector $\bm{C}$ represents a vector that describes such a plane area
-    \end{itemize}
+    \end{hookeditemize}
+    \blankline
     As $\bm{A} \cdot \bm{C} = 0$ \& $\bm{B} \cdot \bm{C} = 0$, 
-    \begin{itemize}
-        \renewcommand\labelitemi{--}
+    \begin{hookeditemize}
         \item $\bm{C}$ is perpendicular to the plane defined by $\bm{A}$ and $\bm{B}$
+    \end{hookeditemize}
+    \begin{dasheditemize}
         \item The +ve direction of $\bm{C}$ is chosen to be the direction of advance of a right-hand screw when rotated from $\bm{A}$ to $\bm{B}$
-    \end{itemize}
-    Therefore,
+    \end{dasheditemize}
+    which gives the results
     \begin{eqnindent}
         \begin{flalign}
-            \bm{A} \times \bm{B} = -\bm{B} \times \bm{A} &&
+            \bm{A} \times \bm{B} = - \bm{B} \times \bm{A} &&
         \end{flalign}
     \end{eqnindent}
     and in general, 
@@ -75,43 +84,53 @@
             \bm{A} \times \paren{\bm{B} \times \bm{C}} \neq \paren{\bm{A} \times \bm{B}} \times \bm{C} &&
         \end{flalign}
     \end{eqnindent}
-    Consider unit vectors $\bm{e}_i$, $\bm{e}_j$ \& $\bm{e}_k$ of a 3-D coordinate system. \\
+    \blankline
+    Consider unit vectors $\bm{e}_i$, $\bm{e}_j$ \& $\bm{e}_k$ of a 3-D coordinate system. \newline
     The orthogonality of the unit vectors requires the vector product of the unit vectors to be
     \begin{eqnindent}
         \begin{flalign}
-            \bm{e}_i \times \bm{e}_j &= \bm{e}_k,\quad\text{$i$, $j$, $k$ in cyclic order} &&\\
-            &= \sum_k\bm{e}_k\epsilon_{ijk} &&
+            \begin{split}
+                \bm{e}_i \times \bm{e}_j &= \bm{e}_k,\quad\text{$i$, $j$, $k$ in cyclic order}\\
+                &= \sum_k\bm{e}_k\epsilon_{ijk}
+            \end{split} &&
         \end{flalign}
     \end{eqnindent}
     Therefore we can express the cross product of two vectors $\bm{A}$ and $\bm{B}$ in such a 3-D coordinate system as
     \begin{eqnindent}
         \begin{flalign}
-            \bm{C} = \bm{A} \times \bm{B} = \sum_{i, j, k}\epsilon_{ijk}\bm{e}_iA_jB_k \equiv \begin{vmatrix}
-                \bm{e}_1 & \bm{e}_2 & \bm{e}_3 \\
-                A_1 & A_2 & A_3 \\
-                B_1 & B_2 & B_3
-            \end{vmatrix} &&
+            \begin{split}
+                \bm{C} = \bm{A} \times \bm{B} &= \sum_{i, j, k}\epsilon_{ijk}\bm{e}_iA_jB_k\\
+                &\equiv \begin{vmatrix}
+                    \bm{e}_1 & \bm{e}_2 & \bm{e}_3 \\
+                    A_1 & A_2 & A_3 \\
+                    B_1 & B_2 & B_3
+                \end{vmatrix}
+            \end{split} &&
         \end{flalign}
     \end{eqnindent}
-    More identities involving Vector Products: 
-    \begin{enumerate}
-        \item $\bm{A} \cdot \paren{\bm{B} \times \bm{C}} = \bm{B} \cdot \paren{\bm{C} \times \bm{A}} = \bm{C} \cdot \paren{\bm{A} \times \bm{B}} \equiv \bm{A}\bm{B}\bm{C}$
-        \item $\bm{A} \times \paren{\bm{B} \times \bm{C}} = \paren{\bm{A} \cdot \bm{C}}\bm{B} - \paren{\bm{A} \cdot \bm{B}}\bm{C}$
-        \item
-        \begin{flalign}
-            \begin{rcases}
-                \paren{\bm{A} \times \bm{B}} \cdot \paren{\bm{C} \times \bm{D}} &= \bm{A} \cdot \sparen{\bm{B} \times \paren{\bm{C} \times \bm{D}}}\quad\\
-                &= \bm{A} \cdot \sparen{\paren{\bm{B} \cdot \bm{D}}\bm{C} - \paren{\bm{B} \cdot \bm{C}}\bm{D}}\quad\\
-                &= \paren{\bm{A} \cdot \bm{C}}\paren{\bm{B} \cdot \bm{D}} - \paren{\bm{A} \cdot \bm{D}}\paren{\bm{B} \cdot \bm{C}}\quad
-            \end{rcases} &&
-        \end{flalign}
-        \item
-        \begin{flalign}
-            \begin{rcases}
-                \paren{\bm{A} \times \bm{B}} \times \paren{\bm{C} \times \bm{D}} &= \sparen{\paren{\bm{A} \times \bm{B}} \cdot \bm{D}}\bm{C} - \sparen{\paren{\bm{A} \times \bm{B}} \cdot \bm{C}}\bm{D}\quad\\
-                &= \paren{\bm{A}\bm{B}\bm{D}}\bm{C} - \paren{\bm{A}\bm{B}\bm{C}}\bm{D} = \paren{\bm{A}\bm{C}\bm{D}}\bm{B} - \paren{\bm{B}\bm{C}\bm{D}}\bm{A}\quad
-            \end{rcases} &&
-        \end{flalign}
-    \end{enumerate}
+    \blankline
+    More identities involving Vector Products:
+    \begin{indented}
+        \begin{tabular}{ l l }
+            1. & $\begin{aligned}
+                \bm{A} \cdot \paren{\bm{B} \times \bm{C}} = \bm{B} \cdot \paren{\bm{C} \times \bm{A}} = \bm{C} \cdot \paren{\bm{A} \times \bm{B}} \equiv \bm{A}\bm{B}\bm{C}
+            \end{aligned}$ \\
+            2. & $\begin{aligned}
+                \bm{A} \times \paren{\bm{B} \times \bm{C}} = \paren{\bm{A} \cdot \bm{C}}\bm{B} - \paren{\bm{A} \cdot \bm{B}}\bm{C}
+            \end{aligned}$ \\
+            3. & $\begin{aligned}
+                \begin{rcases}
+                    \paren{\bm{A} \times \bm{B}} \cdot \paren{\bm{C} \times \bm{D}} = \bm{A} \cdot \sparen{\bm{B} \times \paren{\bm{C} \times \bm{D}}} &= \bm{A} \cdot \sparen{\paren{\bm{B} \cdot \bm{D}}\bm{C} - \paren{\bm{B} \cdot \bm{C}}\bm{D}}\quad\\
+                    &= \paren{\bm{A} \cdot \bm{C}}\paren{\bm{B} \cdot \bm{D}} - \paren{\bm{A} \cdot \bm{D}}\paren{\bm{B} \cdot \bm{C}}\quad
+                \end{rcases}
+            \end{aligned}$ \\
+            4. & $\begin{aligned}
+                \begin{rcases}
+                    \paren{\bm{A} \times \bm{B}} \times \paren{\bm{C} \times \bm{D}} &= \sparen{\paren{\bm{A} \times \bm{B}} \cdot \bm{D}}\bm{C} - \sparen{\paren{\bm{A} \times \bm{B}} \cdot \bm{C}}\bm{D}\quad\\
+                    &= \paren{\bm{A}\bm{B}\bm{D}}\bm{C} - \paren{\bm{A}\bm{B}\bm{C}}\bm{D} = \paren{\bm{A}\bm{C}\bm{D}}\bm{B} - \paren{\bm{B}\bm{C}\bm{D}}\bm{A}\quad
+                \end{rcases}
+            \end{aligned}$
+        \end{tabular}
+    \end{indented}
 
 \end{document}

@@ -1,0 +1,193 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Geometric Significance of Transformation Matrices}
+    Looking at coordinate transformations on a 3-D coordinate system\newline
+    If the coordinate system undergo a series of rotations, the entire coordinate transformation can be described by the matrix product of each respective rotation's transformation matrix\newline
+    Let $\bm{\lambda}_3$ be the trasnformation matrix describing a series of rotations \texttt{(Figure 1.7-1)}
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                x' &= \bm{\lambda}_1x\quad\&\quad x'' = \bm{\lambda}_2x'\\
+                x'' &= \bm{\lambda}_2\paren{\bm{\lambda}_1x} = \bm{\lambda}_2\bm{\lambda}_1x \equiv \bm{\lambda}_3x\\
+                \implies \bm{\lambda}_3 &= \bm{\lambda}_2\bm{\lambda}_1
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    If the order of rotations change while each respective rotation remains the same, the matrix product will change as matrix multiplication is non-commutative\newline
+    Let $\bm{\lambda}_4$ be the trasnformation matrix describing a series of rotations \texttt{(Figure 1.7-2)}
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                x' &= \bm{\lambda}_2x\quad\&\quad x'' = \bm{\lambda}_1x'\\
+                x'' &= \bm{\lambda}_1\paren{\bm{\lambda}_2x} = \bm{\lambda}_1\bm{\lambda}_2x \equiv \bm{\lambda}_4x\\
+                \implies \bm{\lambda}_4 &= \bm{\lambda}_1\bm{\lambda}_2
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{eqnindent}
+        \begin{flalign}
+            \therefore \bm{\lambda}_3 &\neq \bm{\lambda}_4 &&
+        \end{flalign}
+    \end{eqnindent}
+    Generalising $\bm{\lambda}_1$ \& $\bm{\lambda}_2$, consider the $\paren{x_1,~x_2,~x_3}$ coordinate system rotated $\theta$ counterclockwise about the $x_2$-axis. \texttt{(Figure 1.7-3)}\newline
+    The elements $\lambda_{ij}$ of the transformation matrix $\bm{\lambda}_5$ describing such a coordinate transformation are
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{tabular}{ l l l }
+                $\begin{aligned}
+                    \cos\paren{x_1',~x_1} &= \cos\theta\\
+                    &= \lambda_{11}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_2',~x_1} &= \cos\paren{\frac{\pi}{2} + \theta}\\
+                    &= - \sin\theta = \lambda_{21}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_3',~x_1} &= \cos\paren{\frac{\pi}{2}}\\
+                    &= 0 = \lambda_{31}
+                \end{aligned}$ \\
+                $\begin{aligned}
+                    \cos\paren{x_1',~x_2} &= \cos\paren{\frac{\pi}{2} - \theta}\\
+                    &= \sin\theta = \lambda_{12}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_2',~x_2} &= \cos\theta\\
+                    &= \lambda_{22}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_3',~x_2} &= \cos\paren{\frac{\pi}{2}}\\
+                    &= 0 = \lambda_{32}
+                \end{aligned}$ \\
+                $\begin{aligned}
+                    \cos\paren{x_1',~x_3} &= \cos\paren{\frac{\pi}{2}}\\
+                    &= 0 = \lambda_{13}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_2',~x_3} &= \cos\paren{\frac{\pi}{2}}\\
+                    &= 0 = \lambda_{23}
+                \end{aligned}$ & $\begin{aligned}
+                    \cos\paren{x_3',~x_3} &= \cos\paren{0}\\
+                    &= 1 = \lambda_{33}
+                \end{aligned}$
+            \end{tabular} &&
+        \end{flalign}
+    \end{eqnindent}
+    which surmises to
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{\lambda}_5 = \begin{pmatrix}
+                \cos\theta & \sin\theta & 0 \\
+                - \sin\theta & \cos\theta & 0 \\
+                0 & 0 & 1
+            \end{pmatrix} &&
+        \end{flalign}
+    \end{eqnindent}
+    \blankline
+    Inversion -- transformation that results in the reflection through the origin for all the axes
+    \begin{indented}
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                x_i' &= - x_i &&
+            \end{flalign}
+        \end{eqnindent}
+        e.g.
+        \begin{indented}
+            Let $\bm{\lambda}_6$ be the trasnformation matrix describing an inversion \texttt{(Figure 1.7-4)}
+            \begin{eqnindent}
+                \begin{flalign}
+                    \bm{x}' &= \bm{\lambda}_6\bm{x},\quad\text{where }\bm{\lambda}_6 = \begin{pmatrix}
+                        - 1 & 0 & 0 \\
+                        0 & - 1 & 0 \\
+                        0 & 0 & - 1
+                    \end{pmatrix} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
+    \end{indented}
+    \blankline
+    Looking at coordinate transformations on a 3-D coordinate system\newline
+    Consider successive applications of orthogonal transformation described by transformation matrices $\bm{\lambda}$ \& $\bm{\mu}$ respectively
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                x_i' &= \sum_j\lambda_{ij}x_j\quad\&\quad x_k'' = \sum_i\mu_{ki}x_i'\\
+                x_k'' &= \sum_j\paren{\sum_i\mu_{ki}\lambda_{ij}}x_j = \sum_j\sparen{\bm{\mu}\bm{\lambda}}_{kj}x_k
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    As $\paren{\bm{\mu}\bm{\lambda}} = \bm{\lambda}^t\bm{\mu}^t$, and that $\bm{\lambda}^t = \bm{\lambda}^{-1}$ \& $\bm{\mu}^t = \bm{\mu}^{-1}$,
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                \paren{\bm{\mu}\bm{\lambda}}^t\bm{\mu}\bm{\lambda} = \bm{\lambda}^t\bm{\mu}^t\bm{\mu}\bm{\lambda} = \bm{\lambda}^t\bm{1}\bm{\lambda} &= \bm{\lambda}^t\bm{\lambda}\\
+                &= \bm{1}\\
+                &= \paren{\bm{\mu}\bm{\lambda}}^{-1}\bm{\mu}\bm{\lambda}\\
+                \implies \paren{\bm{\mu}\bm{\lambda}}^t &\equiv \paren{\bm{\mu}\bm{\lambda}}^{-1}
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{hookeditemize}
+        \item successive orthogonal transformations always results in an orthogonal transformation
+    \end{hookeditemize}
+    \blankline
+    Orthogonal transformations can be characterised by the determinant of its transformation matrix
+    \begin{dasheditemize}
+        \item Proper rotations -- rotations starting from the original set of axes\newline
+        In general, such as in the coordinate transformation described by transformation matrix $\bm{\lambda}_5$. \texttt{(Figure 1.7-3)}
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \abs{\bm{\lambda}_5} &= \begin{vmatrix}
+                        \cos\theta & \sin\theta & 0 \\
+                        - \sin\theta & \cos\theta & 0 \\
+                        0 & 0 & 1
+                    \end{vmatrix}\\
+                    &= \cos\theta~\begin{vmatrix}
+                        \cos\theta & 0 \\
+                        0 & 1
+                    \end{vmatrix} - \sin\theta~\begin{vmatrix}
+                        - \sin\theta & 0 \\
+                        0 & 1
+                    \end{vmatrix} + 0\begin{vmatrix}
+                        -\sin\theta & \cos\theta \\
+                        0 & 0
+                    \end{vmatrix}\\
+                    &= \cos\theta~\sparen{\cos\theta~\paren{1} - 0\paren{0}} - \sin\theta~\sparen{- \sin\theta~\paren{1} - 0\paren{0}} + 0\sparen{- \sin\theta~\paren{0} - \cos\theta~\paren{0}}\\
+                    &= \cos^2\theta - \paren{- \sin^2\theta} - 0\\
+                    &= 1
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{hookeditemize}
+            \item determinants equal to `$+ 1$'
+        \end{hookeditemize}
+        \item Improper rotations -- rotation that cannot be generated by any series of proper rotations from the original set of axes
+        Such as in the coordinate transformation described by transformation matrix $\bm{\lambda}_6$. \texttt{(Figure 1.7-4)}
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \abs{\bm{\lambda}_6} &= \begin{vmatrix}
+                        - 1 & 0 & 0 \\
+                        0 & - 1 & 0 \\
+                        0 & 0 & - 1
+                    \end{vmatrix}\\
+                    &= - 1\begin{vmatrix}
+                        - 1 & 0 \\
+                        0 & - 1
+                    \end{vmatrix} - 0\begin{vmatrix}
+                        0 & 0 \\
+                        0 & - 1
+                    \end{vmatrix} + 0\begin{vmatrix}
+                        - 1 & 0 \\
+                        0 & - 1
+                    \end{vmatrix}\\
+                    &= - 1\sparen{- 1\paren{- 1} - 0\paren{0}} - 0\sparen{0\paren{- 1} - 0\paren{0}} + 0\sparen{- 1\paren{- 1} - 0\paren{0}}\\
+                    &= - 1 - 0 + 0\\
+                    &= - 1
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{hookeditemize}
+            \item determinants equal to `$- 1$'
+        \end{hookeditemize}
+    \end{dasheditemize}
+
+\end{document}

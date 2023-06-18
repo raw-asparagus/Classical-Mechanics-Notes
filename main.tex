@@ -6,7 +6,9 @@
 \usepackage{amsmath}
 \allowdisplaybreaks
 
+\usepackage{amssymb}
 \usepackage{bm}
+\usepackage{multicol}
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
@@ -29,21 +31,65 @@
     }
 \newenvironment{eqnindent}
 {
-    \begin{addmargin}[15pt]{0pt}
-        \vspace{-\bigskipamount}
-        \vspace{-\smallskipamount}
+    \begin{indented}
+        \vspace{- \bigskipamount}
+        \vspace{- \smallskipamount}
 }
 {
-    \end{addmargin}
-    \vspace{-\smallskipamount}
+    \end{indented}
+    \vspace{- \smallskipamount}
 }
+
+\usepackage{enumitem}
+\newenvironment{dasheditemize}
+{
+    \begin{itemize}[noitemsep, nolistsep]
+        \renewcommand\labelitemi{--}
+        \renewcommand\labelitemii{--}
+        \renewcommand\labelitemiii{--}
+        \renewcommand\labelitemiv{--}
+}
+{
+    \end{itemize}
+}
+\newenvironment{hookeditemize}
+{
+    \begin{itemize}[noitemsep, nolistsep]
+        \renewcommand\labelitemi{$\hookrightarrow$}
+        \renewcommand\labelitemii{$\hookrightarrow$}
+        \renewcommand\labelitemiii{$\hookrightarrow$}
+        \renewcommand\labelitemiv{$\hookrightarrow$}
+}
+{
+    \end{itemize}
+}
+\newenvironment{tightenumerate}
+{
+    \begin{enumerate}[noitemsep, nolistsep]
+}
+{
+    \end{enumerate}
+}
+
+\newcommand{\blankline}{~\newline\vspace{\smallskipamount}\newline}
+
+\setlength{\parindent}{0pt}
 
 \usepackage{subfiles}
 
 \begin{document}
 
     \section{Matrices, Vectors, and Vector Calculus}
-    \addtocounter{subsection}{10}
+    \subfile{./chap_1/chap_1_1.tex}
+    \subfile{./chap_1/chap_1_2.tex}
+    \subfile{./chap_1/chap_1_3.tex}
+    \subfile{./chap_1/chap_1_4.tex}
+    \subfile{./chap_1/chap_1_5.tex}
+    \subfile{./chap_1/chap_1_6.tex}
+    \subfile{./chap_1/chap_1_7.tex}
+    \subfile{./chap_1/chap_1_8.tex}
+    \subfile{./chap_1/chap_1_9.tex}
+    \subfile{./chap_1/chap_1_10.tex}
     \subfile{./chap_1/chap_1_11.tex}
     \subfile{./chap_1/chap_1_12.tex}
     \subfile{./chap_1/chap_1_13.tex}
@@ -51,5 +97,9 @@
     \subfile{./chap_1/chap_1_15.tex}
     \subfile{./chap_1/chap_1_16.tex}
     \subfile{./chap_1/chap_1_17.tex}
+    \section{Newtonian Mechanics- Single Particle}
+    \subfile{./chap_2/chap_2_1.tex}
+    \subfile{./chap_2/chap_2_2.tex}
+    \subfile{./chap_2/chap_2_3.tex}
 
 \end{document}

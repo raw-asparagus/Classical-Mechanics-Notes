@@ -1,0 +1,149 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Further Definitions}
+    Transposed Matrix -- matrix derived from an original matrix by interchange of rows \& columns
+    \begin{dasheditemize}
+        \item denoted by a superscript `$t$' on the original matrix\newline
+        i.e.
+        \begin{indented}
+            the transpose of $\bm{A}$ is $\bm{A}^t$
+        \end{indented}
+    \end{dasheditemize}
+    \begin{indented}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \lambda_{ij}^t = \lambda_{ji}\quad\text{and that}\quad\paren{\bm{\lambda}^t}^t = \bm{\lambda} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    Identity Matrix -- matrix which when multiplied by another matrix, leaves the latter unaffected
+    \begin{indented}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \bm{1}\bm{A} = \bm{A} &\implies \begin{pmatrix}
+                        1 & 0 \\
+                        0 & 1
+                    \end{pmatrix}\begin{pmatrix}
+                        A_1 \\
+                        A_2
+                    \end{pmatrix} = \begin{pmatrix}
+                        1A_1 + 0A_2 \\
+                        0A_1 + 1A_2
+                    \end{pmatrix} = \begin{pmatrix}
+                        A_1 \\
+                        A_2
+                    \end{pmatrix}\\
+                    \bm{B}\bm{1} = \bm{B} &\implies \begin{pmatrix}
+                        B_1 & B_2
+                    \end{pmatrix}\begin{pmatrix}
+                        1 & 0 \\
+                        0 & 1
+                    \end{pmatrix} = \begin{pmatrix}
+                        B_1\paren{1} + B_2\paren{0} & B_1\paren{0} + B_2\paren{1}
+                    \end{pmatrix} = \begin{pmatrix}
+                        B_1 & B_2
+                    \end{pmatrix}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    Inverse of a matrix -- matrix which, when multiplied by the original matrix, produces the identity matrix
+    \begin{dasheditemize}
+        \item denoted by a superscript `$- 1$' on the original matrix\newline
+        i.e.
+        \begin{indented}
+            the inverse of $\bm{A}$ is $\bm{A}^{- 1}$
+        \end{indented}
+    \end{dasheditemize}
+    \begin{indented}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{\lambda}\bm{\lambda}^{- 1} = \bm{1} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    \pagebreak
+    Rule of Matrix Algebra
+    \begin{tightenumerate}
+        \item Matrix multiplication is not communicative in general\newline
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{A}\bm{B} \neq \bm{B}\bm{A} &&
+            \end{flalign}
+        \end{eqnindent}
+        except when
+        \begin{dasheditemize}
+            \item multiplication of a matrix \& its inverse\newline
+            i.e.
+            \begin{eqnindent}
+                \begin{flalign}
+                    \bm{A}\bm{A}^{- 1} = \bm{A}^{- 1}\bm{A} = 1 &&
+                \end{flalign}
+            \end{eqnindent}
+            \item multiplication of a matrix \& an identity matrix\newline
+            i.e.
+            \begin{eqnindent}
+                \begin{flalign}
+                    \bm{1}\bm{A} = \bm{A}\bm{1} = \bm{A}&&
+                \end{flalign}
+            \end{eqnindent}
+        \end{dasheditemize}
+        \item Matrix multiplication is associative\newline
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                \paren{\bm{A}\bm{B}}\bm{C} = \bm{A}\paren{\bm{B}\bm{C}} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Matrix addition
+        \begin{dasheditemize}
+            \item the sum $\bm{A} + \bm{B}$ is given by
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{split}
+                        \bm{C} &= \bm{A} + \bm{B}\\
+                        C_{ij} &= A_{ij} + B_{ij}
+                    \end{split} &&
+                \end{flalign}
+            \end{eqnindent}
+            \item is defined if $\bm{A}$ \& $\bm{B}$ have the same dimensions
+        \end{dasheditemize}
+    \end{tightenumerate}
+    \blankline
+    For orthogonal rotation matrices, their transpose \& inverse matrices are identical
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{\lambda}^t = \bm{\lambda}^{- 1} &&
+        \end{flalign}
+    \end{eqnindent}
+    this results from the product between the orthogonal rotation matrix \& its transpose matrix, where
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                \bm{\lambda}\bm{\lambda}^t &= \begin{pmatrix}
+                    \lambda_{11} & \lambda_{12} \\
+                    \lambda_{21} & \lambda_{22}
+                \end{pmatrix}\begin{pmatrix}
+                    \lambda_{11} & \lambda_{21} \\
+                    \lambda_{12} & \lambda_{22}
+                \end{pmatrix}\\
+                &= \begin{pmatrix}
+                    \lambda_{11}\lambda_{11} + \lambda_{22}\lambda_{22} & \lambda_{11}\lambda_{21} + \lambda_{12}\lambda_{22} \\
+                    \lambda_{21}\lambda_{11} + \lambda_{22}\lambda_{12} & \lambda_{21}\lambda_{21} + \lambda_{22}\lambda_{22}
+                \end{pmatrix},\quad\text{where }\sum_j\lambda_{ij}\lambda_{kj} = \delta_{ik}\\
+                &= \begin{pmatrix}
+                    1 & 0 \\
+                    0 & 1
+                \end{pmatrix} = \bm{1} = \bm{\lambda}\bm{\lambda}^{- 1}
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+
+\end{document}

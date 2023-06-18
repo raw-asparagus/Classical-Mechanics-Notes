@@ -1,0 +1,107 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Matrix Operations}
+    Square Matrix -- equal no. of rows \& columns
+    \begin{indented}
+        e.g.
+        \begin{indented}
+            transformation matrix $\bm{\lambda}$
+            \begin{eqnindent}
+                \begin{flalign}
+                    \bm{\lambda} = \begin{pmatrix}
+                        \lambda_{11} & \lambda_{12} & \lambda_{13} \\
+                        \lambda_{21} & \lambda_{22} & \lambda_{23} \\
+                        \lambda_{31} & \lambda_{32} & \lambda_{33}
+                    \end{pmatrix} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
+    \end{indented}
+    Column Matrix
+    \begin{indented}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{x} = \begin{pmatrix}
+                    x_1 \\
+                    x_2 \\
+                    x_3
+                \end{pmatrix} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    Row Matrix
+    \begin{indented}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{x} = \begin{pmatrix}
+                    x_1 & x_2 & x_3
+                \end{pmatrix} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    \pagebreak
+    Matrix multiplication
+    \begin{dasheditemize}
+        \item the product $\bm{A}\bm{B}$ is given by
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \bm{C} &= \bm{A}\bm{B}\\
+                    C_{ij} &= \sparen{\bm{A}\bm{B}}_{ij} = \sum_kA_{ik}B_{kj}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{split}
+                    \bm{x}' &= \bm{\lambda}\bm{x}\\
+                    x_i' &= \sum_j\lambda_{ij}x_j\\
+                    \begin{pmatrix}
+                        x_1' \\
+                        x_2' \\
+                        x_3'
+                    \end{pmatrix} &= \begin{pmatrix}
+                        \lambda_{11} & \lambda_{12} & \lambda_{13} \\
+                        \lambda_{21} & \lambda_{22} & \lambda_{23} \\
+                        \lambda_{31} & \lambda_{32} & \lambda_{33}
+                    \end{pmatrix}\begin{pmatrix}
+                        x_1 \\
+                        x_2 \\
+                        x_3
+                    \end{pmatrix}\\
+                    &= \begin{pmatrix}
+                        \lambda_{11}x_1 + \lambda_{12}x_2 + \lambda_{13}x_3 \\
+                        \lambda_{21}x_1 + \lambda_{22}x_2 + \lambda_{23}x_3 \\
+                        \lambda_{31}x_1 + \lambda_{32}x_2 + \lambda_{33}x_3
+                    \end{pmatrix}
+                \end{split} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item is defined if
+        \begin{indented}
+            (no. of columns in $\bm{A}$) $=$ (no. of rows in $\bm{B}$)
+            \begin{hookeditemize}
+                \item multiplying matrix $\bm{A}$ with $m$ rows \& $n$ columns with matrix $\bm{B}$ with $n$ rows \& $p$ columns result in product matrix $\bm{C}$ with $m$ rows \& $p$ columns
+            \end{hookeditemize}
+        \end{indented}
+        \item is NOT commutative\newline
+        i.e.
+        \begin{indented}
+            If $\bm{A}$ \& $\bm{B}$ are both square matrices, then in general
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{split}
+                        \bm{A}\bm{B} &\neq \bm{B}\bm{A}\\
+                        \sum_kA_{ik}B_{kj} &\neq \sum_kB_{ik}A_{kj}
+                    \end{split} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
+    \end{dasheditemize}
+
+\end{document}

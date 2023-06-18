@@ -3,24 +3,23 @@
 \begin{document}
 
     \subsection{Integration of Vectors}
-    Volume integration of a vector function $\bm{A} = \bm{A}\paren{x_i}$ through a volume $V$ - 
+    Volume integration of a vector function $\bm{A} = \bm{A}\paren{x_i}$ through a volume $V$
     \begin{eqnindent}
         \begin{flalign}
             \int_V\bm{A}dv = \paren{\int_VA_1dv\int_VA_2dv\int_VA_3dv} &&
         \end{flalign}
     \end{eqnindent}
-    Consider a surface $S$ in 3-D coordinate system as in \texttt{(Figure 1.17-1)}\\
-    An integral over $S$ of the projection of a vector function $\bm{A} = \bm{A}\paren{x_i}$ onto the normal of the surface - 
+    Consider a surface $S$ in 3-D coordinate system as in \texttt{(Figure 1.17-1)}\newline
+    An integral over $S$ of the projection of a vector function $\bm{A} = \bm{A}\paren{x_i}$ onto the normal of the surface
     \begin{eqnindent}
         \begin{flalign}
             \int_S\bm{A} \cdot d\bm{a} &&
         \end{flalign}
     \end{eqnindent}
     where $d\bm{a}$ is an element of area of $S$
-    \begin{itemize}
-        \renewcommand\labelitemi{--}
+    \begin{dasheditemize}
         \item with magnitude $da$
-        \item with direction normal to the surface\\
+        \item with direction normal to the surface\newline
         e.g. for the unit normal vector $\bm{n}$
         \begin{eqnindent}
             \begin{flalign}
@@ -28,8 +27,8 @@
             \end{flalign}
         \end{eqnindent}
         for a closed surface, the \textit{outward} normal is taken as the positive direction following conventions
-    \end{itemize}
-    Similarly, the components of $d\bm{a}$ are projections of the element of area on the three mutually perpentually planes defined by the rectangular axes - 
+    \end{dasheditemize}
+    Similarly, the components of $d\bm{a}$ are projections of the element of area on the three mutually perpentually planes defined by the rectangular axes
     \begin{indented}
         e.g. $da_1 = dx_2dx_3,\quad da_2 = dx_1dx_3\quad\&\quad da_3 = dx_1dx_2$
     \end{indented}
@@ -45,24 +44,24 @@
             \int_S\bm{A} \cdot d\bm{a} = \int_S\sum_iA_ida_i &&
         \end{flalign}
     \end{eqnindent}
-    Consider a path extending from point $B$ to $C$ \texttt{(Figure 1.17-2)}\\
-    The line integral along the path from point $B$ to $C$ of a vector function $\bm{A} = \bm{A}\paren{x_i}$ is the integral of the component of $\bm{A}$ along the path - 
+    Consider a path extending from point $B$ to $C$ \texttt{(Figure 1.17-2)}\newline
+    The line integral along the path from point $B$ to $C$ of a vector function $\bm{A} = \bm{A}\paren{x_i}$ is the integral of the component of $\bm{A}$ along the path
     \begin{eqnindent}
         \begin{flalign}
             \int_{BC}\bm{A} \cdot d\bm{s} = \int_{BC}\sum_iA_idx_i &&
         \end{flalign}
     \end{eqnindent}
-    where $d\bm{s}$ is an element of the length with magnitude $ds$ and direction along the direction of the path traversed. \\
-    Consider a closed volume $V$ enclosed by the surface $S$ \texttt{(Figure 1.17-3)}\\
-    Let the vector $\bm{A}$ and its first derivatives be continuous throughout the volume. \\
-    Gauss's theorem (divergence theorem) - the surface integral of $\bm{A}$ over the closed surface $S$ is equal to the volume integral of the divergence of $\bm{A}$ ($\bm{\nabla} \cdot \bm{A}$) throughout the volume $V$ enclosed by the surface $S$
+    where $d\bm{s}$ is an element of the length with magnitude $ds$ and direction along the direction of the path traversed. \newline
+    Consider a closed volume $V$ enclosed by the surface $S$ \texttt{(Figure 1.17-3)}\newline
+    Let the vector $\bm{A}$ and its first derivatives be continuous throughout the volume. \newline
+    Gauss's theorem (divergence theorem) -- the surface integral of $\bm{A}$ over the closed surface $S$ is equal to the volume integral of the divergence of $\bm{A}$ ($\bm{\nabla} \cdot \bm{A}$) throughout the volume $V$ enclosed by the surface $S$
     \begin{eqnindent}
         \begin{flalign}
             \int_S\bm{A} \cdot d\bm{a} = \int_V\bm{\nabla} \cdot \bm{A}dv &&
         \end{flalign}
     \end{eqnindent}
-    Consider an open surface $S$ and the contour path $C$ that defines the surface \texttt{(Figure 1.17-4)}\\
-    Stoke's theorem - the line integral of the vector $\bm{A}$ around the contour path $C$ is equal to the surface integral of the curl of $\bm{A}$ over the surface defined by $C$
+    Consider an open surface $S$ and the contour path $C$ that defines the surface \texttt{(Figure 1.17-4)}\newline
+    Stoke's theorem -- the line integral of the vector $\bm{A}$ around the contour path $C$ is equal to the surface integral of the curl of $\bm{A}$ over the surface defined by $C$
     \begin{eqnindent}
         \begin{flalign}
             \int_C\bm{A} \cdot d\bm{s} = \int_S\paren{\bm{\nabla} \times \bm{A}} \cdot d\bm{a} &&

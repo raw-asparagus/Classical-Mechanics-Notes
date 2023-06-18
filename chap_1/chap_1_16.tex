@@ -3,101 +3,118 @@
 \begin{document}
 
     \subsection{Gradient Operator}
-    Looking at coordinate transformations on a 3-D coordinate system. \\
-    Under a coordinate transformation that transforms $x_i$ into $x_i'$, a scalar $\phi$ remains invariant. 
+    Looking at coordinate transformations on a 3-D coordinate system\newline
+    Under a coordinate transformation that transforms $x_i$ into $x_i'$, a scalar $\phi$ remains invariant
+    \begin{indented}
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                \phi\paren{x_1,~x_2,~x_3} = \phi'\paren{x_1',~x_2',~x_3'} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    with partial derivatives $\phi'$ expanded using chain rule as
     \begin{eqnindent}
         \begin{flalign}
-            \phi\paren{x_1,~x_2,~x_3} = \phi'\paren{x_1',~x_2',~x_3'} &&
+            \frac{\partial\phi'}{\partial x_1'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_1'},\quad\frac{\partial\phi'}{\partial x_2'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_2'}\quad\&\quad\frac{\partial\phi'}{\partial x_3'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_3'} &&
         \end{flalign}
     \end{eqnindent}
-    The partial derivatives of $\phi'$ can be expanded using chain rule as
     \begin{eqnindent}
         \begin{flalign}
-            \Rightarrow \frac{\partial\phi'}{\partial x_1'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_1'},\quad\frac{\partial\phi'}{\partial x_2'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_2'}\quad\&\quad\frac{\partial\phi'}{\partial x_3'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_3'} &&
+            \implies \frac{\partial\phi'}{\partial x_i'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_i'} &&
         \end{flalign}
     \end{eqnindent}
-    which in summation notation surmises to
-    \begin{eqnindent}
-        \begin{flalign}
-            \frac{\partial\phi'}{\partial x_i'} = \sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_i'} &&
-        \end{flalign}
-    \end{eqnindent}
-    To transform $x'$ to $x$, 
+    and to transform $x'$ to $x$, 
     \begin{eqnindent}
         \begin{flalign}
             x_j = \sum_k\lambda_{kj}x_k' &&
         \end{flalign}
     \end{eqnindent}
-    with partial derivatives - 
+    with partial derivatives
     \begin{eqnindent}
         \begin{flalign}
-            \frac{\partial x_j}{\partial x_i'} = \frac{\partial}{\partial x_i'}\paren{\sum_k\lambda_{kj}x_k'} &= \sum_k\lambda_{kj}\paren{\frac{\partial x_k'}{\partial x_i'}},\quad\text{where }\frac{\partial x_k'}{\partial x_i'} \equiv \delta_{ik} &&\nonumber\\
-            &= \sum_k\lambda_{kj}\delta_{ik} &&\nonumber\\
-            &= \lambda_{ij}
+            \begin{split}
+                \frac{\partial x_j}{\partial x_i'} = \frac{\partial}{\partial x_i'}\paren{\sum_k\lambda_{kj}x_k'} = \sum_k\lambda_{kj}\paren{\frac{\partial x_k'}{\partial x_i'}} &= \begin{cases}
+                    \quad0,\quad i \neq k\\
+                    \quad\sum_k\lambda_{kj},\quad i = k
+                \end{cases},\quad\text{where }\frac{\partial x_k'}{\partial x_i'} \equiv \delta_{ik}\\
+                &= \sum_k\lambda_{kj}\delta_{ik}\\
+                &= \lambda_{ij}
+            \end{split} &&
         \end{flalign}
     \end{eqnindent}
     which gives the partial derivatives of $\phi'$ as
     \begin{eqnindent}
         \begin{flalign}
+            \label{eq:112}
             \frac{\partial\phi'}{\partial x_i'} = \sum_j\lambda_{ij}\frac{\partial\phi}{\partial x_j} &&
         \end{flalign}
     \end{eqnindent}
-    showing that $\frac{\partial\phi}{\partial x_j}$ transforms as components of a vector. \\
-    Vector gradient operator ($\bm{\nabla}$) expressed as
+    \begin{hookeditemize}
+        \item $\frac{\partial\phi}{\partial x_j}$ transforms as components of a vector
+    \end{hookeditemize}
+    \blankline
+    Vector gradient operator ($\bm{\nabla}$)
     \begin{eqnindent}
         \begin{flalign}
             \mathbf{grad} = \bm{\nabla} = \sum_i\bm{e}_i\frac{\partial}{\partial x_i} &&
         \end{flalign}
     \end{eqnindent}
-    \begin{itemize}
-        \renewcommand\labelitemi{--}
+    which describes the differential operator in equation (\ref{eq:112})
+    \begin{dasheditemize}
         \item can operate directly on a scalar function
         \begin{eqnindent}
             \begin{flalign}
                 \mathbf{grad}~\phi = \bm{\nabla}\phi = \sum_i\bm{e}_i\frac{\partial\phi}{\partial x_i} &&
             \end{flalign}
         \end{eqnindent}
-        Consider 3-D topographical maps as in \texttt{(Figure 1.16-1)}\\
-        Let the scalar $\phi$ denote the height at any point $\phi = \phi\paren{x_1,~x_2,~x_3}$. \\
-        An infinitesimal change in $\phi$ ($d\phi$) is
-        \begin{eqnindent}
-            \begin{flalign}
-                d\phi = \sum_i\frac{\partial\phi}{\partial x_i}dx_i &= \sum_i\paren{\bm{\nabla}\phi}_idx_i &&\nonumber\\
-                &= \paren{\bm{\nabla}\phi} \cdot d\bm{s},\quad\text{where }d\bm{s} = \paren{dx_1,~dx_2,~dx_3} &&
-            \end{flalign}
-        \end{eqnindent}
-        \begin{enumerate}
-            \item $\bm{\nabla}\phi$ is normal to lines or surfaces for which $\phi$ is constant
-            \item $\bm{\nabla}\phi$ is in the direction of the maximum change in $\phi$
-            \item the rate of change of $\phi$ in the direction of a unit vector $\bm{n}$ (directional derivative of $\phi$) is
-            \begin{eqnindent}
-                \begin{flalign}
-                    \bm{n} \cdot \bm{\nabla}\phi \equiv \frac{\partial\phi}{\partial n} &&
-                \end{flalign}
-            \end{eqnindent}
-        \end{enumerate}
-        \item can be used in a scalar product with a vector function (divergence (div) of $\bm{A}$)
-        \begin{eqnindent}
-            \begin{flalign}
-                \mathbf{div}~\bm{A} = \bm{\nabla} \cdot \bm{A} = \sum_i\bm{e}_i\frac{\partial A_i}{\partial x_i} &&
-            \end{flalign}
-        \end{eqnindent}
-        \item can be used in a vector product with a vector function (curl of $\bm{A}$)
-        \begin{eqnindent}
-            \begin{flalign}
-                \mathbf{curl}~\bm{A} = \bm{\nabla} \times \bm{A} = \sum_{i, j, k}\bm{e}_{ijk}\frac{\partial A_k}{\partial x_j}\bm{e}_i &&
-            \end{flalign}
-        \end{eqnindent}
-    \end{itemize}
-    Laplacian - successive operation of the gradient operator
+    \end{dasheditemize}
+    \blankline
+    Consider 3-D topographical maps as in \texttt{(Figure 1.16-1)}\newline
+    Let the scalar $\phi$ denote the height at any point $\phi = \phi\paren{x_1,~x_2,~x_3}$. \newline
+    An infinitesimal change in $\phi$ ($d\phi$) is
     \begin{eqnindent}
         \begin{flalign}
-            \bm{\nabla} \cdot \bm{\nabla} &= \sum_i\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_i} = \sum_i\frac{\partial^2}{\partial x_i^2} &&\nonumber\\
-            \bm{\nabla}^2 &= \sum_i\frac{\partial^2}{\partial x_i^2} &&
+            d\phi = \sum_i\frac{\partial\phi}{\partial x_i}dx_i &= \sum_i\paren{\bm{\nabla}\phi}_idx_i &&\nonumber\\
+            &= \paren{\bm{\nabla}\phi} \cdot d\bm{s},\quad\text{where }d\bm{s} = \paren{dx_1,~dx_2,~dx_3} &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{tightenumerate}
+        \item $\bm{\nabla}\phi$ is normal to lines or surfaces for which $\phi$ is constant
+        \item $\bm{\nabla}\phi$ is in the direction of the maximum change in $\phi$
+        \item the rate of change of $\phi$ in the direction of a unit vector $\bm{n}$ (directional derivative of $\phi$) is
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{n} \cdot \bm{\nabla}\phi \equiv \frac{\partial\phi}{\partial n} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{tightenumerate}
+    divergence (div) of $\bm{A}$ -- scalar product with a vector function
+    \begin{eqnindent}
+        \begin{flalign}
+            \mathbf{div}~\bm{A} = \bm{\nabla} \cdot \bm{A} = \sum_i\frac{\partial A_i}{\partial x_i} &&
+        \end{flalign}
+    \end{eqnindent}
+    curl of $\bm{A}$ -- vector product with a vector function
+    \begin{eqnindent}
+        \begin{flalign}
+            \mathbf{curl}~\bm{A} = \bm{\nabla} \times \bm{A} = \sum_{i, j, k}\bm{e}_{ijk}\frac{\partial A_k}{\partial x_j}\bm{e}_i &&
+        \end{flalign}
+    \end{eqnindent}
+    \blankline
+    Laplacian -- successive operation of the gradient operator
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{\nabla}^2 = \bm{\nabla} \cdot \bm{\nabla} &= \sum_i\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_i} = \sum_i\frac{\partial^2}{\partial x_i^2} &&
         \end{flalign}
     \end{eqnindent}
     \begin{indented}
-        e.g. $\bm{\nabla}^2\psi = \sum_i\frac{\partial^2\phi}{\partial x_i^2}$
+        e.g.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{\nabla}^2\psi = \sum_i\frac{\partial^2\phi}{\partial x_i^2} &&
+            \end{flalign}
+        \end{eqnindent}
     \end{indented}
 
 \end{document}

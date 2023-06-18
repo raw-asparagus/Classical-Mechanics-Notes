@@ -1,0 +1,98 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Properties of Rotation Matrices}
+    Consider a line segment extending in a certain direction in space with the origin of the coordinate system lying at some point on the line \texttt{(Figure 1.4-1)}\newline
+    The direction cosines of the line -- cosines of definite angles the line makes with each coordinate axes
+    \begin{hookeditemize}
+        \item relates to unity as
+        \begin{eqnindent}
+            \begin{flalign}
+                \cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1 &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{hookeditemize}
+    Another similar line segment is added such that it intersects the original line segment at the origin \texttt{(Figure 1.4-2)}\newline
+    The cosine of the angle $\theta$ between the two lines relates to the direction cosines of both lines as
+    \begin{eqnindent}
+        \begin{flalign}
+            \label{eq:13}
+            \cos\theta = \cos\alpha\cos\alpha' + \cos\beta\cos\beta' + \cos\gamma\cos\gamma' &&
+        \end{flalign}
+    \end{eqnindent}
+    \blankline
+    Looking at coordinate transformations on a 3-D coordinate system rotated about some axis through the origin. \newline
+    We specify the coordinate transformations through the 9 individual elements $\lambda_{ij}$ of the transformation matrix $\bm{\lambda}$
+    \begin{dasheditemize}
+        \item 6 quantities are related\newline
+        Suppose the $x_1'$-, $x_2'$- \& $x_3'$-axes are lines in the $\paren{x_1,~x_2,~x_3}$ coordinate system such that lines $x_1'$, $x_2'$ \& $x_3'$ are defined with direction cosines $\paren{\lambda_{11},~\lambda_{12},~\lambda_{13}}$, $\paren{\lambda_{21},~\lambda_{22},~\lambda_{23}}$ \& $\paren{\lambda_{31},~\lambda_{32},~\lambda_{33}}$ respectively
+\pagebreak
+        \begin{multicols}{2}
+            \vspace{- \bigskipamount}
+            For each line,
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{rcases}
+                        \lambda_{11}^2 + \lambda_{12}^2 + \lambda_{13}^2 = 1\quad\\
+                        \lambda_{21}^2 + \lambda_{22}^2 + \lambda_{23}^2 = 1\quad\\
+                        \lambda_{31}^2 + \lambda_{32}^2 + \lambda_{33}^2 = 1\quad
+                    \end{rcases} &&
+                \end{flalign}
+            \end{eqnindent}
+            which in summation notation surmises to
+            \begin{eqnindent}
+                \begin{flalign}
+                    \sum_j\lambda_{ij}\lambda_{kj} = 1,\quad i = k &&
+                \end{flalign}
+            \end{eqnindent}
+            \blankline
+            As each line is perpendicular to each other,
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{rcases}
+                        \lambda_{11}\lambda_{21} + \lambda_{12}\lambda_{22} + \lambda_{13}\lambda_{23} = \cos\paren{\frac{\pi}{2}} = 0\quad\\
+                        \lambda_{21}\lambda_{31} + \lambda_{22}\lambda_{32} + \lambda_{23}\lambda_{33} = \cos\paren{\frac{\pi}{2}} = 0\quad\\
+                        \lambda_{11}\lambda_{31} + \lambda_{12}\lambda_{32} + \lambda_{13}\lambda_{33} = \cos\paren{\frac{\pi}{2}} = 0\quad
+                    \end{rcases} &&
+                \end{flalign}
+            \end{eqnindent}
+            which in summation notation surmises to
+            \begin{eqnindent}
+                \begin{flalign}
+                    \sum_j\lambda_{ij}\lambda_{kj} = 0,\quad i \neq k &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{multicols}
+        \vspace{- \bigskipamount}
+        \item 3 independent quantities
+    \end{dasheditemize}
+    Of the 6 non-independent quantities, we can combine the summation results into
+    \begin{eqnindent}
+        \begin{flalign}
+            \sum_j\lambda_{ij}\lambda_{kj} = \delta_{ik} &&
+        \end{flalign}
+    \end{eqnindent}
+    where $\delta_{ik}$ is the Kronecker delta symbol
+    \begin{eqnindent}
+        \begin{flalign}
+            \hookrightarrow \delta_{ik} = \begin{cases}
+                \quad0,\quad i \neq k\\
+                \quad1,\quad i = k
+            \end{cases} &&
+        \end{flalign}
+    \end{eqnindent}
+    The above result is the orthogonality condition\footnote{
+        If instead the $x_1$-, $x_2$- \& $x_3$-axes were taken as lines in the $\paren{x_1',~x_2',~x_3'}$ coordinate system, it will yield the relation $\sum_i\lambda_{ij}\lambda_{ik} = \delta_{ik}$, which is mathematically similar to the result from the former construction
+    } -- true when coordinate axes in each of the systems specified in the rotation are mutually perpendicular (orthogonal)
+    \blankline
+    The transformation of coordinates and properties of transformation matrices are mathematically similar for differing constructions
+    \begin{dasheditemize}
+        \item the transformation acts on the point $P$, giving a new state of the point (point $P'$) expressed with respect to a fixed coordinate system \texttt{(Figure 1.4-3)}
+        \item the transformation acts on the frame of reference \texttt{(Figure 1.4-4)}
+    \end{dasheditemize}
+    \begin{hookeditemize}
+        \item The coordinates of point $P'$ in the former construction is equivalent to the new coordinates $\paren{x_1',~x_2'}$ of point $P$ in the latter construction
+    \end{hookeditemize}
+
+\end{document}

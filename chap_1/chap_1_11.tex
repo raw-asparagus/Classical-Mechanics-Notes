@@ -3,39 +3,58 @@
 \begin{document}
 
     \subsection{Unit Vectors}
-    Unit vetors - a vector with length equal to the unit of length used along the particular coordinate axes
+    Unit vetors -- a vector with length equal to the unit of length used along the particular coordinate axes
     \begin{indented}
-        e.g. variants of the symbol for unit vectors
-        \begin{itemize}
-            \renewcommand\labelitemi{--}
-            \item $\paren{\bm{i},~\bm{j},~\bm{k}}$
-            \item $\paren{\bm{e}_1,~\bm{e}_2,~\bm{e}_3}$
-            \item $\paren{\bm{e}_r,~\bm{e}_{\theta},~\bm{e}_{\phi}}$
-            \item $\paren{\hat{r},~\hat{\theta},~\hat{\phi}}$
-        \end{itemize}
-        i.e. vector $\bm{A} = \paren{A_1,~A_2,~A_3}$ to be expressed in terms of unit vectors
-        \begin{itemize}
-            \renewcommand\labelitemi{--}
-            \item $\bm{A} = \bm{e}_1A_1 + \bm{e}_2A_2 + \bm{e}_3A_3 = \sum_i\bm{e}_iA_i$
-            \item $\bm{A} = A_1\bm{i} + A_2\bm{j} + A_3\bm{k}$
-        \end{itemize}
-        i.e. unit vector along the radial direction
-        \begin{eqnindent}
-            \begin{flalign}
-                \bm{e}_R = \frac{\bm{R}}{\abs{\bm{R}}} &&
-            \end{flalign}
-        \end{eqnindent}
+        i.e.
+        \begin{indented}
+            unit vector along the radial direction
+            \begin{eqnindent}
+                \begin{flalign}
+                    \bm{e}_R = \frac{\bm{R}}{\abs{\bm{R}}} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
+        e.g.
+        \begin{indented}
+            variants of the symbols for unit vectors
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{rcases}
+                        \paren{\bm{i},~\bm{j},~\bm{k}}\quad\\
+                        \paren{\bm{e}_1,~\bm{e}_2,~\bm{e}_3}\quad\\
+                        \paren{\bm{e}_r,~\bm{e}_{\theta},~\bm{e}_{\phi}}\quad\\
+                        \paren{\hat{\bm{r}},~\hat{\bm{\theta}},~\hat{\bm{\phi}}}\quad
+                    \end{rcases} &&
+                \end{flalign}
+            \end{eqnindent}
+            vector $\bm{A} = \paren{A_1,~A_2,~A_3}$ to be expressed in terms of unit vectors
+            \begin{eqnindent}
+                \begin{flalign}
+                    \begin{rcases}
+                        \bm{A} = A_1\bm{i} + A_2\bm{j} + A_3\bm{k}\quad\\
+                        \bm{A} = \bm{e}_1A_1 + \bm{e}_2A_2 + \bm{e}_3A_3 = \sum_i\bm{e}_iA_i\quad
+                    \end{rcases} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
     \end{indented}
+    \blankline
     The components of a vector can be obtained by projection onto its axes
     \begin{eqnindent}
         \begin{flalign}
             A_i = \bm{e}_i \cdot \bm{A} &&
         \end{flalign}
     \end{eqnindent}
-    From the results of a scalar product, for any two orthogonal vectors, 
+    For any two orthogonal unit vectors,
     \begin{eqnindent}
         \begin{flalign}
-            \bm{e}_i \cdot \bm{e}_j = \abs{\bm{e}_i}\abs{\bm{e}_j}\cos\paren{i,~j} = \delta_{ij} &&
+            \begin{split}
+                \bm{e}_i \cdot \bm{e}_j = \abs{\bm{e}_i}\abs{\bm{e}_j}\cos\paren{i,~j} &= \begin{cases}
+                    \quad0,\quad i \neq j\\
+                    \quad1,\quad i = j
+                \end{cases}\\
+                &= \delta_{ij}
+            \end{split} &&
         \end{flalign}
     \end{eqnindent}
 

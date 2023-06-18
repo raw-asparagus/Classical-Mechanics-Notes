@@ -1,0 +1,111 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{Coordinate Transformations}
+    Looking at coordinate transformations on a 2-D coordinate system rotated about its origin\newline
+    From \texttt{(Figure 1.3-1)},
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                x_1' &= \paren{\text{projection of $x_1$ onto the $x_1'$-axis}} + \paren{\text{projection of $x_2$ onto the $x_1'$-axis}}\\
+                &= \overline{Oa} + \paren{\overline{ab} + \overline{bc}},\quad\text{where }\overline{ab} + \overline{bc} = \overline{dx_2}\\
+                &= \overline{Oa} + \overline{dx_2}\\
+                &= x_1\cos\theta + x_2\sin\theta\\
+                &= x_1\cos\theta + x_2\cos\paren{\frac{\pi}{2} - \theta}
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{split}
+                x_2' &= \paren{\text{projection of $x_1$ onto the $x_2'$-axis}} + \paren{\text{projection of $x_2$ onto the $x_2'$-axis}}\\
+                &= - \overline{de} + \overline{Od},\quad\text{where }\overline{de} = \overline{Of}\\
+                &= - \overline{Of} + \overline{Od}\\
+                &= - x_1\sin\theta + x_2\cos\theta\\
+                &= x_1\cos\paren{\frac{\pi}{2} + \theta} + x_2\cos\theta
+            \end{split} &&
+        \end{flalign}
+    \end{eqnindent}
+    Next, let $\paren{x_i',~x_j}$ be the angle between the $x_i'$-axis \& the $x_j$-axis
+    \begin{indented}
+        and a set of numbers $\lambda_{ij}$
+        \begin{eqnindent}
+            \begin{flalign}
+                \lambda_{ij} \equiv \cos\paren{x_i',~x_j} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    Thus, in the case of 2-D coordinate transformations,
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{rcases}
+                \lambda_{11} = \cos\paren{x_1',~x_1} = \cos\theta\quad\\
+                \lambda_{12} = \cos\paren{x_1',~x_2} = \cos\paren{\frac{\pi}{2} - \theta} = \sin\theta\quad\\
+                \lambda_{21} = \cos\paren{x_2',~x_1} = \cos\paren{\frac{\pi}{2} + \theta} = - \sin\theta\quad\\
+                \lambda_{22} = \cos\paren{x_2',~x_2} = \cos\theta\quad
+            \end{rcases} &&
+        \end{flalign}
+    \end{eqnindent}
+    which allows us to express the equations of transformation $x_1'$ \& $x_2'$ as
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{rcases}
+                x_1' = x_1\cos\paren{x_1',~x_1} + x_2\cos\paren{x_1',~x_2} = \lambda_{11}x_1 + \lambda_{12}x_2\quad\\
+                x_2' = x_1\cos\paren{x_2',~x_1} + x_2\cos\paren{x_2',~x_2} = \lambda_{21}x_1 + \lambda_{22}x_2\quad
+            \end{rcases} &&
+        \end{flalign}
+    \end{eqnindent}
+    or for a 3-D coordinate transformation,
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{rcases}
+                x_1' = x_1\cos\paren{x_1',~x_1} + x_2\cos\paren{x_1',~x_2} + x_3\cos\paren{x_1',~x_3} = \lambda_{11}x_1 + \lambda_{12}x_2 + \lambda_{13}x_3\quad\\
+                x_2' = x_1\cos\paren{x_2',~x_1} + x_2\cos\paren{x_2',~x_2} + x_3\cos\paren{x_2',~x_3} = \lambda_{21}x_1 + \lambda_{22}x_2 + \lambda_{23}x_3\quad\\
+                x_3' = x_1\cos\paren{x_3',~x_1} + x_2\cos\paren{x_3',~x_2} + x_3\cos\paren{x_3',~x_3} = \lambda_{31}x_1 + \lambda_{32}x_2 + \lambda_{33}x_3\quad
+            \end{rcases} &&
+        \end{flalign}
+    \end{eqnindent}
+    which in summation notation surmises to
+    \begin{eqnindent}
+        \begin{flalign}
+            x_i' = \sum_{j_1}^3\lambda_{ij}x_j,\quad i = 1,~2,~3 &&
+        \end{flalign}
+    \end{eqnindent}
+    and inversely for equation of transformation $x_1$, $x_2$ \& $x_3$,
+    \begin{eqnindent}
+        \begin{flalign}
+            \begin{rcases}
+                x_1 = x_1'\cos\paren{x_1',~x_1} + x_2'\cos\paren{x_2',~x_1} + x_3'\cos\paren{x_3',~x_1} = \lambda_{11}x_1' + \lambda_{21}x_2' + \lambda_{31}x_3'\quad\\
+                x_2 = x_1'\cos\paren{x_1',~x_2} + x_2'\cos\paren{x_2',~x_2} + x_3'\cos\paren{x_3',~x_2} = \lambda_{12}x_1' + \lambda_{22}x_2' + \lambda_{32}x_3'\quad\\
+                x_3 = x_1'\cos\paren{x_1',~x_3} + x_2'\cos\paren{x_2',~x_3} + x_3'\cos\paren{x_3',~x_3} = \lambda_{13}x_1' + \lambda_{23}x_2' + \lambda_{33}x_3'\quad
+            \end{rcases} &&
+        \end{flalign}
+    \end{eqnindent}
+    which in summation notation surmises to
+    \begin{eqnindent}
+        \begin{flalign}
+            x_i = \sum_{j = 1}^3\lambda_{ji}x_j',\quad i = 1,~2,~3 &&
+        \end{flalign}
+    \end{eqnindent}
+    where the quantity $\lambda_{ij}$ is the direction cosine of the $x_i'$-axis relative to the $x_j$-axis
+    \blankline
+    The set of numbers $\lambda_{ij}$ for all $i$ \& $j$ combinations can be arranged into a square matrix $\bm{\lambda}$ denoting the totality of the individual elements $\lambda_{ij}$
+    \begin{indented}
+        i.e.
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{\lambda} = \begin{pmatrix}
+                    \lambda_{11} & \lambda_{12} & \lambda_{13} \\
+                    \lambda_{21} & \lambda_{22} & \lambda_{23} \\
+                    \lambda_{31} & \lambda_{32} & \lambda_{33}
+                \end{pmatrix} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{indented}
+    in which $\bm{\lambda}$ is the transformation matrix (rotation matrix)
+    \begin{hookeditemize}
+        \item specifies the transformation properties of the coordinates
+    \end{hookeditemize}
+
+\end{document}
